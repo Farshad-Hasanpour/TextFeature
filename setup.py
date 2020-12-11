@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="textfeature",
-    version="0.0.8",
+    version="0.0.9",
     author="Farshad Hasanpour",
     author_email="farshad.hasanpour96@gmail.com",
     description="transform unstructured text to feature vector using word2vec, lexicon and ... ",

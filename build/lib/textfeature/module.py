@@ -58,19 +58,13 @@ class TextFeature:
 		except Exception as e:
 			print('This instance of class doesn\'t use ' + lexicon_name)
 			return False
-		# Stem words
-		stemmer = nltk.stem.PorterStemmer()
-		stemmed_words = []
-		for word in word_tokens:
-			stemmed_words.append(stemmer.stem(word))
-		stemmed_words = np.array(stemmed_words)
-		# List of words in lexicon
-		lexicon_words = list(lexicon.keys())
 		# calculate average of vectors for each word that exists in both text and lexicon. Other words are ignored
 		vector_sum = np.array([0] * vector_size)
 		number_of_words = 0
-		for word in stemmed_words:
-			if word in lexicon_words:
+		stemmer = nltk.stem.PorterStemmer()
+		for word in word_tokens:
+			word = stemmer.stem(word)
+			if word in lexicon:
 				vector_sum = vector_sum + np.array(lexicon[word][0:vector_size])
 				number_of_words = number_of_words + 1
 		# If there is at least 1 word in text return the result
