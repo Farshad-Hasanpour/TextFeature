@@ -74,11 +74,3 @@ class TextFeature:
 		if number_of_words == 0:
 			return False
 		return vector_sum / number_of_words
-
-
-# Test Class
-if __name__ == '__main__':
-	TextFeature = TextFeature('./resource/GoogleNews-vectors-negative300.bin.gz', './resource/NRC-Lexicon-v0.92-english.csv')
-	word_tokens = nltk.word_tokenize('loved zip')
-	print(TextFeature.text_w2v(word_tokens))
-	print(TextFeature.text_l2v(word_tokens, 'nrc0', 10))
