@@ -5,6 +5,9 @@ import pandas as pd
 
 
 class TextFeature:
+
+	LEXICON_NAMES = ['nrc0']
+
 	def __init__(self, word2vec_model='', lexicon_nrc0=''):
 		# Decide to use word2vec as feature or not
 		if word2vec_model:
@@ -13,7 +16,7 @@ class TextFeature:
 		self.lexicon = {}
 		# Decide to use NRCv0.92 lexicon as feature or not
 		if lexicon_nrc0:
-			self.lexicon['nrc0'] = pd.read_csv(lexicon_nrc0, engine='c', encoding='utf-8').set_index('English (en)').T.to_dict('list')
+			self.lexicon['nrc0'] = pd.read_csv(lexicon_nrc0, engine='c', encoding='utf-8', index_col=0).T.to_dict('list')
 
 	def text_w2v(self, word_tokens):
 		"""

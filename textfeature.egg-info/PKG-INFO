@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: textfeature
-Version: 0.0.1
+Version: 0.0.8
 Summary: transform unstructured text to feature vector using word2vec, lexicon and ... 
-Home-page: https://github.com/Farshad-Hasanpour/TextFeature
+Home-page: https://github.com/Farshad-Hasanpour/textfeature
 Author: Farshad Hasanpour
 Author-email: farshad.hasanpour96@gmail.com
 License: UNKNOWN

@@ -1,1 +1,2 @@
-from TextFeature import TextFeature
+from . import module
+TextFeature = module.TextFeature
