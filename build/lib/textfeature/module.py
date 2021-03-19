@@ -8,10 +8,10 @@ class TextFeature:
 
 	LEXICON_NAMES = ['nrc0']
 
-	def __init__(self, word2vec_model='', lexicon_nrc0=''):
+	def __init__(self, word2vec_model='', lexicon_nrc0='', w2v_binary=True, w2v_unicode_errors='strict', w2v_datatype=np.float32):
 		# Decide to use word2vec as feature or not
 		if word2vec_model:
-			self.word2vec = KeyedVectors.load_word2vec_format(fname=word2vec_model, binary=True)
+			self.word2vec = KeyedVectors.load_word2vec_format(fname=word2vec_model,binary=w2v_binary,unicode_errors=w2v_unicode_errors,datatype=w2v_datatype)
 
 		self.lexicon = {}
 		# Decide to use NRCv0.92 lexicon as feature or not
